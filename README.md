@@ -2,6 +2,8 @@
 
 ##Key Features
 
+User profile with location (force sign-on with GitHub)
+
 Pick a vertical i.e. wearables 
 
 Should be invite only (closed beta) to start. Get users from our events
