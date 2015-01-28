@@ -26,6 +26,12 @@ Need new content often:
 One section is for personal projects
 Find projects on Github and post it to the feed, upvoted and contribute to projects (v2)
 
-Roles and Responsibilities:
+##Roles and Responsibilities
+
+Shehaaz: Architect Data Model
+
+Nadim: Work with Telescope
+
+Usman: RESTful API to integrate with github
 
 
