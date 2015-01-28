@@ -2,7 +2,9 @@
 
 ##Key Features
 
-User profile with location (force sign-on with GitHub)
+1. User profile with location (force sign-on with GitHub)
+2. Sort feed by location
+3. Have collections of projects that ambassadors can manage
 
 Pick a vertical i.e. wearables 
 
