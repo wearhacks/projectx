@@ -1,6 +1,10 @@
 from flask import Flask, request, render_template, url_for, redirect, session, g
+from cassandra.cluster import Cluster
 
 app = Flask(__name__)
+
+cluster = Cluster()
+cass = cluster.connect()
 
 @app.route('/')
 def index():
