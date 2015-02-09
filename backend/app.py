@@ -7,13 +7,6 @@ app = Flask(__name__)
 
 firebase = firebase.FirebaseApplication(os.environ['DB'], None)
 
-result = firebase.get('/hello', None)
-print result
-
-data = {'name': 'Ozgur Vatansever'}
-
-firebase.post('/users/1', data)
-
 
 @app.route('/')
 def index():
