@@ -21,7 +21,7 @@ def addUser(id):
 	contentType = request.headers['Content-Type']
 	if contentType == 'application/json':
     	 data = json.dumps(request.json)
-    	 firebase.post('/users/'+id, data)
+    	 fb.post('/users/'+id, data)
          return "JSON Message: " + data
 	else:
          return "415 Unsupported Media Type" + contentType	
