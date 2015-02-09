@@ -18,13 +18,13 @@ def getUser(id):
 
 @app.route('/addUser/<id>', methods = ['POST'])
 def addUser(id):
-
-    if request.headers['Content-Type'] == 'application/json':
-    	data = json.dumps(request.json)
-    	firebase.post('/users/'+id, data)
-        return "JSON Message: " + data
-    else:
-        return "415 Unsupported Media Type ;)"		
+	contentType = request.headers['Content-Type']
+	if contentType == 'application/json':
+    	 data = json.dumps(request.json)
+    	 firebase.post('/users/'+id, data)
+         return "JSON Message: " + data
+	else:
+         return "415 Unsupported Media Type" + contentType	
 
 
 if __name__ == '__main__':
