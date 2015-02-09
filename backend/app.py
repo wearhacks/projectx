@@ -14,7 +14,7 @@ def index():
 
 @app.route('/getUser/<id>')
 def getUser(id):
-	return firebase.get('/users/'+id)
+	return firebase.get('/users/1', None)
 
 @app.route('/addUser/<id>', methods = ['POST'])
 def addUser(id):
