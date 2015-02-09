@@ -5,7 +5,7 @@ from firebase import firebase
 
 app = Flask(__name__)
 
-firebase = firebase.FirebaseApplication(os.environ['DB'], None)
+fb = firebase.FirebaseApplication(os.environ['DB'], None)
 
 
 @app.route('/')
@@ -14,7 +14,7 @@ def index():
 
 @app.route('/getUser/<id>')
 def getUser(id):
-	return firebase.get('/users/1', None)
+	return fb.get('/users/'+id, None)
 
 @app.route('/addUser/<id>', methods = ['POST'])
 def addUser(id):
