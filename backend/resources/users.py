@@ -28,14 +28,8 @@ class Users(restful.Resource):
 
 	# @marshal_with(user_fields)
 	def get(self, _id):
-	    # args = post_parser.parse_args()
 	    return fb.get('/users/'+_id, None)
 
 	# @marshal_with(user_fields)
 	def post(self, _id):
-		# args = parser.parse_args()
-		# data = {'username' : args.username, 'email' : args.email}
-		print "data", request.json
-		data = json.dumps(request.json)
-		fb.post('/users/'+_id, data)
-		return data
+		fb.post('/users/'+_id, request.json)
