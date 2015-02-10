@@ -1,6 +1,7 @@
 from flask.ext import restful
 from flask.ext.restful import fields, marshal_with, reqparse
 from firebase import firebase
+import os
 
 fb = firebase.FirebaseApplication(os.environ['DB'], None)
 

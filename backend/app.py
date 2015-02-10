@@ -6,7 +6,7 @@ from resources.hello_world import HelloWorld
 app = Flask(__name__)
 api = restful.Api(app)
 
-api.add_resource(Users, '/api/v1.0/users/<user_id>', endpoint = 'users')
+api.add_resource(Users, '/api/v1.0/users/<_id>', endpoint = 'users')
 api.add_resource(HelloWorld, '/api/', endpoint = 'hello_world')
 
 if __name__ == '__main__':
