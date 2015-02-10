@@ -1,21 +1,28 @@
-``getUser(userID)`` 
-``If DNE create user``
-``Return user data``
-``accepts: POST -Json data``
+#Create project in event
+
+curl http://127.0.0.1:5000/api/v1.0/event/toronto/projectID -X POST -d '{"title":"random", "votes":"24", "num_comments":"10"}' -H "Content-Type: application/json"
+
+#get all projects from event
+
+curl http://127.0.0.1:5000/api/v1.0/event/toronto -X GET
+
+----
+
+#Create and Get Project
+
+curl http://127.0.0.1:5000/api/v1.0/project/projectID -X POST -d '{"title":"random", "desc":"blah", "team_members":[{"name":"bob"},{"name":"billy"}], "votes":"24", "tags":["wearable","hardware"], "github":"github_url"}' -H "Content-Type: application/json"
+
+curl http://127.0.0.1:5000/api/v1.0/project/projectID -X GET
 
 
-``createHackathon(cityName) -Post json data``
+#Create User
 
-``getHackathon(cityName)``
+curl http://127.0.0.1:5000/api/v1.0/users/1 -X -POST -d '{"name":"bob","age":15"}' -H "Content-Type: application/json"
 
+#Get User
 
-``addBadge(userID, cityName) -Post json badge data``
-``//Add badge to user and add User to hackathon``
-
-
-
-``createProject(userID, projectName, cityName) -Post Json data``
-``//Insert into User and Hackathon table``
+curl http://127.0.0.1:5000/api/v1.0/users/1 -X GET
 
 
-``getAllProjects(cityName)``
+#To Do
+upVote(projectID)
