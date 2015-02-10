@@ -1,18 +1,21 @@
-//if DNE create user
-//Return user
-//POST
-getUser(userID) -Json data 
-
-createHackathon(cityName) -Post json data
-
-getHackathon(cityName)
-
-//Add badge to user and add User to hackathon
-addBadge(userID, cityName) -Post json badge data
+``getUser(userID)`` 
+``If DNE create user``
+``Return user data``
+``accepts: POST -Json data``
 
 
-//Insert into User and Hackathon table
-createProject(userID, projectName, cityName) -Post Json data
+``createHackathon(cityName) -Post json data``
+
+``getHackathon(cityName)``
 
 
-getAllProjects(cityName)
+``addBadge(userID, cityName) -Post json badge data``
+``//Add badge to user and add User to hackathon``
+
+
+
+``createProject(userID, projectName, cityName) -Post Json data``
+``//Insert into User and Hackathon table``
+
+
+``getAllProjects(cityName)``
