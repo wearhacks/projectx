@@ -5,8 +5,6 @@ from firebase import firebase
 from db import fb
 import json
 
-
-
 class Users(restful.Resource):
 
 	# @marshal_with(user_fields)

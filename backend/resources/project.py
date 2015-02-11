@@ -8,8 +8,8 @@ import json
 
 class Project(restful.Resource):
 
-	def get(self, _projectID):
-	    return fb.get('/projects/'+_projectID, None)
+	def get(self, project_id):
+	    return fb.get('/projects/'+project_id, None)
 
-	def post(self, _projectID):
-		fb.post('/projects/'+_projectID, request.json)
+	def post(self, project_id):
+		fb.post('/projects/'+project_id, request.json)
