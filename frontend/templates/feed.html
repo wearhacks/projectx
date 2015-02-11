@@ -1,66 +1,90 @@
     {% include 'header.html' %}
-
-     
-       
-      <div ng-app="feedApp" class="row">
+                    
+    
+    <div class="parallax-content">
+       <div class="row"><div class="large-12 "><ul class="breadcrumbs">
+        <li><a href="/">Events</a></li>
+        <li><a href="#">Wearhacks Montreal 2015</a></li>
+      </ul></div>
+      </div>
+      <div ng-app="feederApp" ng-controller="ProjectController" class="row ">
       
-           
-         
-        <div class="large-8 columns">
-     
-           
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
-            <div class="large-10 columns">
-              <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-              <ul class="inline-list">
-                <li><a href="">Reply</a></li>
-                <li><a href="">Share</a></li>
-              </ul>
-     
-            </div>
-          </div>
-           
-     
-          <hr/>
-     
-           
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
-            <div class="large-10 columns">
-              <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-              <ul class="inline-list">
-                <li><a href="">Reply</a></li>
-                <li><a href="">Share</a></li>
-              </ul>
-            </div>
-          </div>
-           
-     
-          <hr/>
-     
-           
-          <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div>
-            <div class="large-10 columns">
-              <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-              <ul class="inline-list">
-                <li><a href="">Reply</a></li>
-                <li><a href="">Share</a></li>
-              </ul>
-     
-     
-              <h6>2 Comments</h6>
-              <div class="row">
-                <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]"/></div>
-                <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
-              </div>
-            </div>
-          </div>
-           
-     
+
+      
+      <div class="projectfeed clearfix" >
+         <div class="large-1 columns upvote">
+          {% raw %}
+          <a ng-click="upvote(votes)" ng-class="{ 'upvoted': votes[1] , '': !votes[1]  }" ng-init="votes=[340,false]"><i class="step fi-arrow-up size-72"></i></a>
+        
+          <p>{{votes[0]}}</p>
+          {% endraw %}
         </div>
+        <div class="large-11 columns">
      
+          <div class="row ">
+                <div class="large-12 columns">
+                     <a href="/events/montreal/projectx"><h5 class="title">Project X <br><small>Posted on 12/12/14</small></h5></a>
+                     <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+                      <div><ul>
+                        <li><span class="round alert label">#forfun</span></li>
+                        <li><span class="round success label">#myo</span></li>
+                        <li><span class="round regular label">#oculous</span></li>
+                      </ul>
+                      </div>
+                      <a class="comment" href="/events/montreal/projectx"><i class="fi-comment-quotes"></i> 12 comments</a>
+                </div>
+
+
+          </div>         
+  
+
+         
+     
+          
+        </div>
+      </div>
+       {% raw %}
+     
+         <div ng-repeat="project in projects" class="projectfeed clearfix" >
+         <div class="large-1 columns upvote">
+         
+          <a ng-click="upvote(votes)" ng-class="{ 'upvoted': votes[1] , '': !votes[1]  }" ng-init="votes=[project.upvotes,false]"><i class="step fi-arrow-up size-72"></i></a>
+        
+          <p>{{votes[0]}}</p>
+         
+        </div>
+        <div class="large-11 columns">
+     
+          <div class="row ">
+                <div class="large-12 columns">
+                     <a href="/events/montreal/projectx"><h5 class="title">{{project.project_name}} 
+                      <br>
+                      <small>Posted on {{project.date}}</small>
+                     </h5></a>
+                     
+                     <p>{{project.description}}</p>
+                      <div><ul>
+                        <li><span class="round alert label">#forfun</span></li>
+                        <li><span class="round success label">#myo</span></li>
+                        <li><span class="round regular label">#oculous</span></li>
+                      </ul>
+                      </div>
+                      <a class="comment" href="#"><i class="fi-comment-quotes"></i> {{project.comments}} comments</a>
+                </div>
+
+
+          </div>         
+    
+
+         
+     
+          
+        </div>
+      </div>
+
+      {% endraw %}
+   
+
          
       </div>
 

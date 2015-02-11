@@ -233,3 +233,40 @@ position: absolute;
   margin-bottom:10px;
 }
 .projectfeed p {font-size:0.8rem; }
+.eventtitle {
+  font-size:3rem;
+  font-weight:100;
+  text-align: center;
+}
+.event {
+  background-color:whitesmoke;
+  text-align: center;
+  color:white;
+  height:16rem;
+  background-size: cover;
+  border-radius:10px;
+  margin-bottom:10px;
+}
+.event h1 {
+  margin-top:6rem;
+  color:white;
+  font-weight:100;
+  border-bottom:2px solid rgba(255,255,255,0.5);
+     -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+
+}
+.event h1:hover {
+  background-color:rgba(255,255,255,0.5);
+     -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+}
+.white-bg {
+  background-color: white;
+}

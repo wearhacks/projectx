@@ -1,95 +1,45 @@
     {% include 'header.html' %}
                     
-    
-    <div class="parallax-content">
-       <div class="row"><div class="large-12 "><ul class="breadcrumbs">
-        <li><a href="/">Events</a></li>
-        <li><a href="#">Wearhacks Montreal 2015</a></li>
-      </ul></div>
-      </div>
-      <div ng-app="feederApp" ng-controller="ProjectController" class="row ">
+    <div id='over'>
+          <div class="parallax-background" style="background-image:url(/static/img/coffee.jpg); ">
+            <div class="intro-text" style="background: rgba(0,0,0,0.5);">
+              Project X
+              <p>A platform for innovators</p>
+            </div>
+          </div>
+    </div>
+    <div class="parallax-content white-bg">
+
+        <div class="container">
+          <div class="row">
+            <h1 class="eventtitle">Events</h1>
+          </div>
+          <div class="row">
+            <div class="event large-8 columns large-offset-2" style="background-image:url(/static/img/montreal.jpg);">
+              <a href="/events/montreal"><h1>WearHacks Montreal 2015</h1></a>
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="event large-8 columns large-offset-2" style="background-image:url(/static/img/toronto.jpg);">
+              <h1>WearHacks Toronto 2015</h1>
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="event large-8 columns large-offset-2" style="background-image:url(/static/img/vancouver.jpg);">
+              <h1>WearHacks Vancouver 2015</h1>
+              <p></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="event large-8 columns large-offset-2" style="background-image:url(/static/img/seattle.jpg);">
+              <h1>WearHacks Seattle 2015</h1>
+              <p></p>
+            </div>
+          </div>
+        </div>
       
-
       
-      <div class="projectfeed clearfix" >
-         <div class="large-1 columns upvote">
-          {% raw %}
-          <a ng-click="upvote(votes)" ng-class="{ 'upvoted': votes[1] , '': !votes[1]  }" ng-init="votes=[340,false]"><i class="step fi-arrow-up size-72"></i></a>
-        
-          <p>{{votes[0]}}</p>
-          {% endraw %}
-        </div>
-        <div class="large-11 columns">
-     
-          <div class="row ">
-                <div class="large-12 columns">
-                     <h5 class="title">Project X <small>Posted on 12/12/14</small></h5>
-                     <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-                      <div><ul>
-                        <li><span class="round alert label">#forfun</span></li>
-                        <li><span class="round success label">#myo</span></li>
-                        <li><span class="round regular label">#oculous</span></li>
-                      </ul>
-                      </div>
-                      <a class="comment" href="#"><i class="fi-comment-quotes"></i> 12 comments</a>
-                </div>
-
-
-          </div>         
-  
-
-         
-     
-          
-        </div>
-      </div>
-       {% raw %}
-     
-         <div ng-repeat="project in projects" class="projectfeed clearfix" >
-         <div class="large-1 columns upvote">
-         
-          <a ng-click="upvote(votes)" ng-class="{ 'upvoted': votes[1] , '': !votes[1]  }" ng-init="votes=[project.upvotes,false]"><i class="step fi-arrow-up size-72"></i></a>
-        
-          <p>{{votes[0]}}</p>
-         
-        </div>
-        <div class="large-11 columns">
-     
-          <div class="row ">
-                <div class="large-12 columns">
-                     <a href="/events/montreal/projectx"><h5 class="title">{{project.project_name}} 
-                      <br>
-                      <small>Posted on {{project.date}}</small>
-                     </h5></a>
-                     
-                     <p>{{project.description}}</p>
-                      <div><ul>
-                        <li><span class="round alert label">#forfun</span></li>
-                        <li><span class="round success label">#myo</span></li>
-                        <li><span class="round regular label">#oculous</span></li>
-                      </ul>
-                      </div>
-                      <a class="comment" href="#"><i class="fi-comment-quotes"></i> {{project.comments}} comments</a>
-                </div>
-
-
-          </div>         
-    
-
-         
-     
-          
-        </div>
-      </div>
-
-      {% endraw %}
-      <div ng-repeat="project in projects" >
-        
-        <h1></h1>
-        
-      </div>
-
-         
-      </div>
 
       {% include 'footer.html' %}

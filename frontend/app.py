@@ -11,7 +11,7 @@ def comments(project=None):
 
 @app.route('/events/<event>')
 def getevent(event=None):
-    return render_template('index.html')
+    return render_template('feed.html')
 
 @app.route('/')
 def hello(name=None):
