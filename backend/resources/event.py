@@ -7,8 +7,8 @@ import json
 
 class Event(restful.Resource):
 
-	def get(self, _city):
-		return fb.get('/event/'+_city, None)
+	def get(self, city):
+		return fb.get('/event/' + city, None)
 
-	def post(self, _city, _project):
-		fb.post('/event/'+ _city + '/' + _project, request.json)
+	def post(self, city, project):
+		fb.post('/event/'+ city + '/' + project, request.json)
