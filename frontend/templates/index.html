@@ -1,0 +1,89 @@
+    {% include 'header.html' %}
+                    
+  <nav class="row">
+    <div class="large-12 columns">
+      <ul class="button-group radius even-4">
+        <li><a class="button" href="#">Recent Projects</a></li>
+        <li><a class="button" href="#">Events</a></li>
+        <li><a class="button" href="#">All Events</a></li>
+      </ul>
+    </div>
+  </nav>  
+    
+       
+      <div ng-app="feederApp" ng-controller="ProjectController" class="row ">
+      
+
+
+      <div class="projectfeed clearfix" >
+         <div class="large-1 columns upvote">
+          <a href="#"><i class="step fi-arrow-up size-72"></i></a>
+          <p>340 Votes</p>
+        </div>
+        <div class="large-11 columns">
+     
+          <div class="row ">
+                <div class="large-12 columns">
+                     <h5 class="title">Project X <small>Posted on 12/12/14</small></h5>
+                     <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+                      <div><ul>
+                        <li><span class="round alert label">#forfun</span></li>
+                        <li><span class="round success label">#myo</span></li>
+                        <li><span class="round regular label">#oculous</span></li>
+                      </ul>
+                      </div>
+                      <a class="comment" href="#"><i class="fi-comment-quotes"></i> 12 comments</a>
+                </div>
+
+
+          </div>         
+  
+
+         
+     
+          
+        </div>
+      </div>
+      
+      {% raw %}
+         <div ng-repeat="project in projects" class="projectfeed clearfix" >
+         <div class="large-1 columns upvote">
+          <a href="#"><i class="step fi-arrow-up size-72"></i></a>
+          <p>{{project.upvotes}} Votes</p>
+        </div>
+        <div class="large-11 columns">
+     
+          <div class="row ">
+                <div class="large-12 columns">
+                     <h5 class="title">{{project.project_name}} <small>Posted on {{project.date}}</small></h5>
+                     <p>{{project.description}}</p>
+                      <div><ul>
+                        <li><span class="round alert label">#forfun</span></li>
+                        <li><span class="round success label">#myo</span></li>
+                        <li><span class="round regular label">#oculous</span></li>
+                      </ul>
+                      </div>
+                      <a class="comment" href="#"><i class="fi-comment-quotes"></i> {{project.comments}} comments</a>
+                </div>
+
+
+          </div>         
+    
+
+         
+     
+          
+        </div>
+      </div>
+
+      {% endraw %}
+      <div ng-repeat="project in projects" >
+        
+        <h1></h1>
+        
+      </div>
+
+         
+      </div>
+
+      {% include 'footer.html' %}
