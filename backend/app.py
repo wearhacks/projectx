@@ -11,7 +11,7 @@ api = restful.Api(app)
 
 #className, Enpoint, filename
 api.add_resource(Users, '/api/v1.0/users/<_id>', endpoint = 'users')
-api.add_resource(EventGet, '/api/v1.0/event/<city>','/api/v1.0/event/<city>/<project>', endpoint = 'event')
+api.add_resource(Event, '/api/v1.0/event/<city>','/api/v1.0/event/<city>/<project>', endpoint = 'event')
 api.add_resource(Project, '/api/v1.0/project/<project_id>', endpoint = 'project')
 api.add_resource(UpVote, '/api/v1.0/upvote/<project_id>', endpoint = 'upvote')
 api.add_resource(HelloWorld, '/api', endpoint = 'hello_world')
