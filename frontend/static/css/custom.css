@@ -194,6 +194,14 @@ border-top: 36px solid #f55641;
 .project .comment p,a,li {
   font-size:0.8rem;
 }
+.project .upvote a:visited {
+  
+    color:#f90;
+
+}
+.project .upvote .upvoted {
+  color:black;
+}
 
 .projectfeed{
   border: 1px solid #F5F5F5;
@@ -205,6 +213,13 @@ border-top: 36px solid #f55641;
 .projectfeed .upvote a{
   font-size:2rem;
 }
+.upvoted {
+  color:#f90;
+}
+.upvoted:hover {
+  color:#EF7600;
+}
+
 .projectfeed .upvote {
   text-align:center;
 }

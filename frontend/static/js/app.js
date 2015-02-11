@@ -3,9 +3,15 @@ var app = angular.module('feederApp', []);
 
 angular.module('feederApp', [])
   .controller('ProjectController', function($scope,$http) {
-    $scope.todos = [
-      {text:'learn angular', done:true},
-      {text:'build an angular app', done:false}];
+    $scope.upvote = function(vote){
+        if(vote[1])
+          vote[0]--;
+        else
+          vote[0]++;
+
+        vote[1] = !vote[1];
+
+    };
     
  	  $http.get("/api/stories").success(function (data, status) {
             $scope.projects = data;
@@ -13,7 +19,7 @@ angular.module('feederApp', [])
         }).error(function (data, status) {
                 $scope.response = 'Request failed';
        });
-   	console.log($scope.projects);
+   	
   });
 
 

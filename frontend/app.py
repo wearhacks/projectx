@@ -5,9 +5,13 @@ app = Flask(__name__)
 def stories(name=None):
     return send_file('MOCK_DATA.json')
 
-@app.route('/comments/')
-def comments(name=None):
+@app.route('/events/montreal/<project>')
+def comments(project=None):
     return render_template('comments.html')
+
+@app.route('/events/<event>')
+def getevent(event=None):
+    return render_template('index.html')
 
 @app.route('/')
 def hello(name=None):

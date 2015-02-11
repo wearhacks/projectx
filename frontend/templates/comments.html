@@ -1,14 +1,19 @@
 {% include 'header.html' %}
+
+	<div class="parallax-content" style="background-color:white">
    <div class="project">
 
-    <div class="row">
+    <div ng-app="feederApp" ng-controller="ProjectController"  class="row">
     	<div class="upvote">
-    		<a href="#"><i class="step fi-arrow-up size-72"></i></a>
-    		<p>340 Votes</p>
+			{% raw %}
+    		<a ng-click="upvote(votes)" ng-class="{ 'upvoted': votes[1] , '': !votes[1]  }" ng-init="votes=[340,false]"><i class="step fi-arrow-up size-72"></i></a>
+
+    		<p>{{votes[0]}} Votes</p>
+    		{% endraw %}
     		</div>
     		<a href="https://github.com/you"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
     	<div class="large-1 columns"></div>
-    	<div class="large-11 columns"><h1>Project Crazy</h1><div class="tags clearfix">
+    	<div class="large-11 columns"><h1>Project X Wearable Revolution</h1><div class="tags clearfix">
     			<ul>
     				<li><span class="round alert label">#forfun</span></li>
     				<li><span class="round success label">#myo</span></li>
@@ -22,9 +27,32 @@
     	
     	
     	<div class="large-12 columns">
-		
+		<div class="row">
     		<p class="description">Inspired by vim, we have created a keyboard for android that allows for fast navigation. It features two separate keyboard for inserting text and moving around the page. It also allows you to select text quickly and precisely. Our keyboard assuages the difficulties of editing large documents on your phone.</p>
-    			
+    		<div class="slider large-10 columns">
+    			<ul class="example-orbit-content"  data-orbit>
+				  <li data-orbit-slide="headline-1">
+				    <div>
+				      <img src="/static/img/page0.jpg" alt="slide 1" />
+				     
+				    </div>
+				  </li>
+				  <li data-orbit-slide="headline-2">
+				    <div>
+				      <img src="/static/img/page1.jpg" alt="slide 1" />
+				     
+				    </div>
+				  </li>
+				  <li data-orbit-slide="headline-3">
+				    <div>
+				      <img src="/static/img/page2.jpg" alt="slide 1" />
+				     
+				    </div>
+				  </li>
+				</ul>
+    		</div>
+			</div>
+
     		<div class="users clearfix">
     			<div class="row"><p style="font-size:0.8rem">Created by </p></div>
     			<ul>

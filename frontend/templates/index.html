@@ -1,24 +1,23 @@
     {% include 'header.html' %}
                     
-  <nav class="row">
-    <div class="large-12 columns">
-      <ul class="button-group radius even-4">
-        <li><a class="button" href="#">Recent Projects</a></li>
-        <li><a class="button" href="#">Events</a></li>
-        <li><a class="button" href="#">All Events</a></li>
-      </ul>
-    </div>
-  </nav>  
     
-       
+    <div class="parallax-content">
+       <div class="row"><div class="large-12 "><ul class="breadcrumbs">
+        <li><a href="/">Events</a></li>
+        <li><a href="#">Wearhacks Montreal 2015</a></li>
+      </ul></div>
+      </div>
       <div ng-app="feederApp" ng-controller="ProjectController" class="row ">
       
 
-
+      
       <div class="projectfeed clearfix" >
          <div class="large-1 columns upvote">
-          <a href="#"><i class="step fi-arrow-up size-72"></i></a>
-          <p>340 Votes</p>
+          {% raw %}
+          <a ng-click="upvote(votes)" ng-class="{ 'upvoted': votes[1] , '': !votes[1]  }" ng-init="votes=[340,false]"><i class="step fi-arrow-up size-72"></i></a>
+        
+          <p>{{votes[0]}}</p>
+          {% endraw %}
         </div>
         <div class="large-11 columns">
      
@@ -44,18 +43,25 @@
           
         </div>
       </div>
-      
-      {% raw %}
+       {% raw %}
+     
          <div ng-repeat="project in projects" class="projectfeed clearfix" >
          <div class="large-1 columns upvote">
-          <a href="#"><i class="step fi-arrow-up size-72"></i></a>
-          <p>{{project.upvotes}} Votes</p>
+         
+          <a ng-click="upvote(votes)" ng-class="{ 'upvoted': votes[1] , '': !votes[1]  }" ng-init="votes=[project.upvotes,false]"><i class="step fi-arrow-up size-72"></i></a>
+        
+          <p>{{votes[0]}}</p>
+         
         </div>
         <div class="large-11 columns">
      
           <div class="row ">
                 <div class="large-12 columns">
-                     <h5 class="title">{{project.project_name}} <small>Posted on {{project.date}}</small></h5>
+                     <a href="/events/montreal/projectx"><h5 class="title">{{project.project_name}} 
+                      <br>
+                      <small>Posted on {{project.date}}</small>
+                     </h5></a>
+                     
                      <p>{{project.description}}</p>
                       <div><ul>
                         <li><span class="round alert label">#forfun</span></li>
