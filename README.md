@@ -38,4 +38,25 @@ Nadim: Work with Telescope
 
 Usman: RESTful API to integrate with github
 
+##Installation
 
+###Environment variables
+Put the valid Auth client ID in the file server/config/local.env.js, an example file is provided
+as /server/config/local.env.sample.js
+
+###Database installation
+Install Mongodb, and run mongo on the local computer 
+
+###Dependencies installation
+Get the dependencies: in the root directory run
+
+```
+sudo bower install & npm install 
+```
+
+###Launch
+Run the server
+
+```
+grunt serve
+```

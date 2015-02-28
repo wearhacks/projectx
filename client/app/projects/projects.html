@@ -1,0 +1,32 @@
+<div class="col-md-12">
+<div class="container">
+	<div class="row">
+    {{projects |json}}
+		<h2>Projects</h2>
+    <div class="" ng-repeat="project in projects">
+      <a ng-href="/projects/{{project.url}}"> {{project.project_name}} </a>
+    </div>
+	</div>
+	<div class="row">
+  <h2>Create projects</h2>
+  <form role="form">
+    <div class="form-group">
+      <label for="name">Email:</label>
+      <input type="text" class="form-control" placeholder="Enter project name" ng-model="project.project_name"/>
+    </div>
+    
+    <div class="form-group">
+		  <label class="control-label" for="textarea">Text Area</label>
+		  <div class="controls">                     
+		    <textarea class="form-control" id="textarea" rows="3" name="textarea" ng-model="project.description">default text</textarea>
+		  </div>
+	</div>
+	  
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="addProject(project)">Submit</button>
+  </form>
+</div>
+</div>
+</div>

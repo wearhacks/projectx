@@ -1,0 +1,49 @@
+<div ng-repeat="event in events.eventsData">
+	HELLLO WORLD
+	{{event}}
+</div>
+{{users}}
+{{eventsData}}
+
+<h1>Events</h1>
+<div ng-repeat="event in eventsData" id="event"><h1>{{event.name}}</h1><italic>@{{event.creator.name}}</italic><p>{{event.info}}</p></div>
+
+<div class="container">
+	<div class="row"><form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Event Creator</legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="textinput">Event Name</label>
+  <div class="controls">
+    <input  ng-model="event.name" id="textinput" name="textinput" type="text" placeholder="placeholder" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="control-group">
+  <label class="control-label" for="desc">Description</label>
+  <div class="controls">                     
+    <textarea ng-model="event.info" name="desc"></textarea>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label" for="selectbasic">Select Basic</label>
+  <div class="controls">
+    
+    <select class="input-xlarge" ng-model="selectedUser" ng-options="user as user.name for user in users" ></select>
+    {{selectedItem | json}}
+  </div>
+</div>
+
+</fieldset>
+</form>
+ <input type="submit" ng-click="addEvent(event)" value="Add" />
+</div>
+</div>
